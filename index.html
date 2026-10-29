@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI-based resume screening and job matching demo.">
+  <title>AI Resume Screening & Job Matching</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">AI</div>
+    <div><strong>TalentMatch</strong><span>Resume Screening & Job Matching</span></div>
+    <span class="pill">MINOR PROJECT</span>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">SMARTER JOB DISCOVERY</p>
+      <h1>Find the jobs that match<br><em>your skills.</em></h1>
+      <p class="intro">Upload a resume and compare it with sample job descriptions. Review similarity scores, matching skills, and skills you may want to build.</p>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><h2>Analyze your resume</h2><p>Supported formats: PDF and DOCX · Maximum 4 MB</p></div><div class="upload-icon">↑</div></div>
+      <form id="resume-form">
+        <label for="candidate">Candidate name <span>(optional)</span></label>
+        <input id="candidate" name="candidate" type="text" placeholder="Enter your name">
+        <label for="resume">Resume file</label>
+        <label class="dropzone" for="resume" id="dropzone">
+          <span class="file-icon">↥</span>
+          <strong id="file-label">Choose a resume to upload</strong>
+          <span id="file-sub">PDF or DOCX file</span>
+          <input id="resume" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+        </label>
+        <button id="analyze-btn" type="submit">Analyze resume <span>→</span></button>
+        <p class="privacy-note">Demo only: do not upload sensitive personal information. Files are processed for this request and are not intentionally stored by this app.</p>
+      </form>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
+    <section id="results" class="results hidden">
+      <div class="results-head"><div><p class="eyebrow">YOUR RESULTS</p><h2>Job match report</h2></div><button id="download-btn" class="secondary" type="button">Download CSV ↓</button></div>
+      <div class="summary-grid">
+        <article class="summary-card"><span>Best matching job</span><strong id="best-job">—</strong></article>
+        <article class="summary-card"><span>Similarity score</span><strong id="best-score">—</strong></article>
+        <article class="summary-card"><span>Skills detected</span><strong id="skill-count">—</strong></article>
+      </div>
+      <article class="result-card"><h3>Skills detected in your resume</h3><div id="resume-skills" class="chips"></div></article>
+      <h3 class="list-title">Ranked job matches</h3>
+      <div id="job-list"></div>
+      <p class="disclaimer">Scores measure text similarity only. They are not a probability of being hired and should never be used as the sole basis for a hiring decision.</p>
+    </section>
+    <section class="how">
+      <p class="eyebrow">HOW IT WORKS</p><h2>From resume to recommendations</h2>
+      <div class="steps">
+        <div><b>01</b><strong>Upload</strong><span>Submit a PDF or DOCX resume.</span></div>
+        <div><b>02</b><strong>Analyze</strong><span>Extract text and compare it with job descriptions.</span></div>
+        <div><b>03</b><strong>Explore</strong><span>Review ranked matches and skill gaps.</span></div>
+      </div>
+    </section>
+    <footer>AI-Based Resume Screening & Job Matching System · Educational prototype</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
